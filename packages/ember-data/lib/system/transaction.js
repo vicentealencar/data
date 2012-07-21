@@ -1,5 +1,5 @@
 var get = Ember.get, set = Ember.set, getPath = Ember.getPath, fmt = Ember.String.fmt,
-    removeObject = Ember.EnumerableUtils.removeObject;
+    removeObject = Ember.ArrayUtils.removeObject;
 
 /**
   A transaction allows you to collect multiple records into a unit of work

@@ -24,7 +24,7 @@ Set.prototype = {
 
     delete hash[guid];
     var list = this.list,
-        index = Ember.EnumerableUtils.indexOf(this, item);
+        index = Ember.ArrayUtils.indexOf(this, item);
 
     list.splice(index, 1);
   },

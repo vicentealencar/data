@@ -404,7 +404,7 @@ DS.Store = Ember.Object.extend({
   fetchMany: function(type, clientIds) {
     var clientIdToId = this.clientIdToId;
 
-    var neededIds = Ember.EnumerableUtils.map(clientIds, function(clientId) {
+    var neededIds = Ember.ArrayUtils.map(clientIds, function(clientId) {
       return clientIdToId[clientId];
     });
 
@@ -817,7 +817,7 @@ DS.Store = Ember.Object.extend({
     var typeMap = this.typeMapFor(type),
         idToClientIdMap = typeMap.idToCid;
 
-    return Ember.EnumerableUtils.map(ids, function(id) {
+    return Ember.ArrayUtils.map(ids, function(id) {
       var clientId = idToClientIdMap[id];
       if (clientId) { return clientId; }
       return this.pushHash(UNLOADED, id, type);
@@ -878,7 +878,7 @@ DS.Store = Ember.Object.extend({
       ids = [];
       var primaryKey = type.proto().primaryKey;
 
-      ids = Ember.EnumerableUtils.map(hashes, function(hash) {
+      ids = Ember.ArrayUtils.map(hashes, function(hash) {
         return hash[primaryKey];
       });
     }

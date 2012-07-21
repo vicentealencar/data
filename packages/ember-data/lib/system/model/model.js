@@ -302,7 +302,7 @@ DS.Model = Ember.Object.extend(Ember.Evented, {
           if(association.options.embedded) {
             clientIds = store.loadMany(association.type, ids).clientIds;
           } else {
-            clientIds = Ember.EnumerableUtils.map(ids, function(id) {
+            clientIds = Ember.ArrayUtils.map(ids, function(id) {
               return store.clientIdForId(association.type, id);
             });
           }
